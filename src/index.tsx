@@ -4,18 +4,18 @@ import Login from './component/Login';
 import WebApp from './component/WebApp'
 import {createStore} from 'redux';
 import myApp from './service/Reducer';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import {HashRouter, Route, Redirect} from 'react-router-dom';
 
 let store = createStore(myApp);
 
 const routing = (
-    <Router>
+    <HashRouter>
         <div style={{height:"100%"}} >
             <Redirect exact from={process.env.PUBLIC_URL + '/'} to={process.env.PUBLIC_URL + '/login'}></Redirect>
             <Route  path={process.env.PUBLIC_URL + '/login'} render={(props) => <Login store={store}/>} />
             <Route  path={process.env.PUBLIC_URL + '/webApp'}render={(props) => <WebApp store={store}/>}  /> 
         </div>
-    </Router>
+    </HashRouter>
 )
 function render(){
     ReactDOM.render(routing, document.getElementById('root'));
