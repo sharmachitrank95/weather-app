@@ -12,8 +12,8 @@ const routing = (
     <Router>
         <div style={{height:"100%"}} >
             <Redirect exact from={process.env.PUBLIC_URL + '/'} to={process.env.PUBLIC_URL + '/login'}></Redirect>
-            <Route exact path={process.env.PUBLIC_URL + '/login'} render={(props) => <Login store={store}/>} />
-            <Route exact path={process.env.PUBLIC_URL + '/webApp'} render={(props) => <WebApp store={store}/>}  /> 
+            <Route  path='/login' render={(props) => <Login store={store}/>} />
+            <Route  path='/webApp' render={(props) => <WebApp store={store}/>}  /> 
         </div>
     </Router>
 )
