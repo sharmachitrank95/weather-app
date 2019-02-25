@@ -30,14 +30,14 @@ export class Login extends React.Component<ILoginProps, ILoginStates> {
 
     renderRedirect(){
         if (!!localStorage.getItem('userName') && localStorage.getItem('userName')!.length > 0) {
-          return <Redirect to={process.env.PUBLIC_URL + '/webApp'} />
+          return <Redirect exact to={process.env.PUBLIC_URL + '/webApp'} />
         }
     }
 
     onSubmitClick(e:any){
         this.props.store.dispatch(loginData(this.state.userName));
         this.renderRedirect();
-        location.reload();
+       // location.reload();
     }
 
     handleNameChange(e:any){
