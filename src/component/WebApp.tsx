@@ -54,7 +54,7 @@ export class WebApp extends React.Component<IWebAppProps, IWebAppStates>{
         this.setState({
              isBusy:true
         })
-        fetch('https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/forecast?lat='+ this.state.xCoordinate +'&lon='+ this.state.yCoordinate +'&appid=0cefc283fa0c3ad68584e2c30b643c94',
+        fetch('https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/forecast?lat='+ this.state.xCoordinate +'&lon='+ this.state.yCoordinate +'&appid=0cefc283fa0c3ad68584e2c30b643c94&units=metric',
         {
             headers:{'Content-Type': 'text/plain','Access-Type':'application/json'},
         })
