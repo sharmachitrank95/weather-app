@@ -11,7 +11,7 @@ let store = createStore(myApp);
 const routing = (
     <Router>
         <div style={{height:"100%"}} >
-            <Redirect exact from={process.env.PUBLIC_URL + '/'} to={process.env.PUBLIC_URL + '/login'}></Redirect>
+            <Redirect exact from={process.env.PUBLIC_URL + '/'} to='/login'></Redirect>
             <Route  path='/login' render={(props) => <Login store={store}/>} />
             <Route  path='/webApp' render={(props) => <WebApp store={store}/>}  /> 
         </div>
