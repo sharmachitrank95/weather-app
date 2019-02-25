@@ -1,17 +1,17 @@
-# Findind Falcone APP
+# Weather APP
 
-Finding Falcone APP is developed using React with TypeScript. This a responsive app.
+Weather APP is developed using React with TypeScript. This a responsive app.
 
 # Link 
 
-Finding Falcone APP is also live on the following Link: https://umangg21.github.io/finding-falcone/
+Weather APP is also live on the following Link: https://sharmachitrank95.github.io/weather-app/
 
 # Use Case:
 
-Finding Falcone App is a Solution to GeekTrust UI Problem. Link [https://www.geektrust.in/coding-problem/frontend/space](https://www.geektrust.in/coding-problem/frontend/space). 
+Weather App is a which shows 5 days weather of your current location.
 
 This app is developed in React with Typescript.
-Unit Test are written using jest and enzyme(Having code coverge > 85%).
+Unit Test are written using jest and enzyme(Having code coverge > 50%).
 
 # How to run app locally:
 
