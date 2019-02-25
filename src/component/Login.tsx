@@ -30,7 +30,7 @@ export class Login extends React.Component<ILoginProps, ILoginStates> {
 
     renderRedirect(){
         if (!!localStorage.getItem('userName') && localStorage.getItem('userName')!.length > 0) {
-          return <Redirect to='/webapp' />
+          return <Redirect to={process.env.PUBLIC_URL + '/webApp'} />
         }
     }
 
