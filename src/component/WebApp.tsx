@@ -71,7 +71,7 @@ export class WebApp extends React.Component<IWebAppProps, IWebAppStates>{
     }
     renderRedirect(){
         if (!localStorage.getItem('userName') || localStorage.getItem('userName')!.length == 0) {
-          return <Redirect to='/login' />
+          return <Redirect to={'/login'} />
         }
     }
 
