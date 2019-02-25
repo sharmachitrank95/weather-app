@@ -28,7 +28,6 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Redirect
-          from="/"
           push={false}
           to="/login"
         />,
@@ -53,7 +52,6 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "from": "/",
           "push": false,
           "to": "/login",
         },
@@ -90,7 +88,6 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Redirect
-            from="/"
             push={false}
             to="/login"
           />,
@@ -115,7 +112,6 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "from": "/",
             "push": false,
             "to": "/login",
           },
