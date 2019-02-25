@@ -37,7 +37,7 @@ export class Login extends React.Component<ILoginProps, ILoginStates> {
     onSubmitClick(e:any){
         this.props.store.dispatch(loginData(this.state.userName));
         this.renderRedirect();
-       // location.reload();
+        location.reload();
     }
 
     handleNameChange(e:any){
