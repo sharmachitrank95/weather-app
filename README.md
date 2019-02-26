@@ -1,6 +1,7 @@
 # Weather APP
 
 Weather APP is developed using React with TypeScript. This a responsive app.
+It uses best practices such as pure component, stateless component, store for state management, user management, hashrouting etc.
 
 # Link 
 
@@ -8,7 +9,7 @@ Weather APP is also live on the following Link: https://sharmachitrank95.github.
 
 # Use Case:
 
-Weather App is a which shows 5 days weather of your current location.
+Weather App is a which shows 5 days weather of your current location, at an interval of 3 hours.
 
 This app is developed in React with Typescript.
 Unit Test are written using jest and enzyme(Having code coverge > 50%).
