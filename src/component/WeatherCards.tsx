@@ -1,21 +1,13 @@
 import React from 'react';
-import {Card, CardHeader, CardContent, Typography, Grid} from '@material-ui/core';
+import {Card, CardContent, Typography, Grid} from '@material-ui/core';
 
 interface IWeatherCardsProps{
     WeatherCardData:[]
 }
-interface IWeatherCardsStates{
 
-}
-
-export class WeatherCards extends React.Component<IWeatherCardsProps,IWeatherCardsStates>{
-    constructor(props:any) {
-        super(props);
-    }
-
-    render(){
+export const WeatherCards: React.SFC<IWeatherCardsProps> = (props) => {
         let cards;
-        cards = this.props.WeatherCardData.map((cardData:any)=>{
+        cards = props.WeatherCardData.map((cardData:any)=>{
             return (
                 <Grid item xs={"auto"}>
                     <Card>
@@ -50,8 +42,6 @@ export class WeatherCards extends React.Component<IWeatherCardsProps,IWeatherCar
                 </Grid>
             </Grid>
         )
-        
-    }
 }
 
 export default WeatherCards;

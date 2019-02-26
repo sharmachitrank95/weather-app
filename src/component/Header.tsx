@@ -8,15 +8,12 @@ interface IHeaderProps {
     setCurrentLocation:(e:any) => void
 }
 
-interface IHeaderStates {
-    userName:string
-}
-
-export class Header extends React.Component<IHeaderProps, IHeaderStates> {
+export class Header extends React.PureComponent<IHeaderProps>{
+    private userName:string='';
     constructor(props: any) {
         super(props)
         this.onSubmitClick = this.onSubmitClick.bind(this);
-        this.state = {userName: this.props.store.getState().userName}
+        this.userName = this.props.store.getState().userName;
     }
 
     onSubmitClick(e:any){
@@ -30,7 +27,7 @@ export class Header extends React.Component<IHeaderProps, IHeaderStates> {
                     <Grid item style={{flexGrow:1}}>
                         <AppBar position={"static"} style={{flexGrow:1, flexDirection:'row'}}>
                             <Toolbar style={{flexGrow:1, flexDirection:'row'}}>
-                                <Grid item id="welcomeUser" style={{flexGrow:1}} > Welcome {this.state.userName}</Grid>
+                                <Grid item id="welcomeUser" style={{flexGrow:1}} > Welcome {this.userName}</Grid>
                                 <Grid item>{this.props.cityName}</Grid>
                                 <Link style={{color:"white", cursor:"pointer", padding:'1rem'}} onClick={this.props.setCurrentLocation}><i>choose current location</i></Link>
                                 <Grid item ><Button onClick={this.onSubmitClick} variant={"contained"} >Logout</Button></Grid>

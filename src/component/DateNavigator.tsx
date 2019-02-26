@@ -5,9 +5,7 @@ interface IDateNavigatorProps{
     currentDate:any,
     handleDateChange:(e:any,value:any)=>void
 }
-interface IDateNavigatorStates{
 
-}
 function getListItemStyle(match:boolean) {
     if(match){
         return {
@@ -15,20 +13,15 @@ function getListItemStyle(match:boolean) {
         };
     }
 }
-export class DateNavigator extends React.Component<IDateNavigatorProps,IDateNavigatorStates>{
-    constructor(props:any) {
-        super(props);
-    }
-
-    render(){
+export const DateNavigator:React.SFC<IDateNavigatorProps> =(props) => {
         let dates;
-        dates = this.props.dates.map((date:any) => {
+        dates = props.dates.map((date:any) => {
                return <ListItem 
                button 
                component={"a"} 
                value={date} 
-               onClick={e => this.props.handleDateChange(e,date)}
-               style={getListItemStyle(date === this.props.currentDate)}>
+               onClick={e => props.handleDateChange(e,date)}
+               style={getListItemStyle(date === props.currentDate)}>
                {date}
                </ListItem>
            })
@@ -41,8 +34,6 @@ export class DateNavigator extends React.Component<IDateNavigatorProps,IDateNavi
                 </List>
             </Grid>
         )
-        
-    }
 }
 
 export default DateNavigator;

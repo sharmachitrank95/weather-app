@@ -18,7 +18,7 @@ export class WeatherReport extends React.Component<IWeatherReportProps,IWeatherR
     public availableDates:Array<string>;
     constructor(props:any) {
         super(props);
-        this.state = {cardsData:null,date:null,currentDate:null};
+        this.state = {cardsData:null, date:null, currentDate:null};
         this.availableDates = [];
         this.handleDateChange = this.handleDateChange.bind(this);
         this.setCardData = this.setCardData.bind(this);
@@ -34,15 +34,15 @@ export class WeatherReport extends React.Component<IWeatherReportProps,IWeatherR
         })
     }
     componentWillMount(){
-        this.setCardData(this.availableDates[0],this.props.weatherData);
+        this.setCardData(this.availableDates[0]);
     }
 
     handleDateChange(e:any,value:any){
-       this.setCardData(value,this.props.weatherData);
+       this.setCardData(value);
     }
 
-    setCardData(date:any,weatherData:any){
-        let data = _.filter(weatherData.list,(element:any) =>{
+    setCardData(date:any){
+        let data = _.filter(this.props.weatherData.list,(element:any) =>{
            return element.dt_txt.split(' ')[0] === date;
         })
         this.setState({
@@ -55,7 +55,7 @@ export class WeatherReport extends React.Component<IWeatherReportProps,IWeatherR
         return(
             <Grid container spacing={8}>
                 <DateNavigator dates={this.availableDates} handleDateChange={this.handleDateChange} currentDate={this.state.currentDate}/>
-               {!!this.state.cardsData && <WeatherCards WeatherCardData={this.state.cardsData}/>}
+                {!!this.state.cardsData && <WeatherCards WeatherCardData={this.state.cardsData}/>}
             </Grid>
         )
     }

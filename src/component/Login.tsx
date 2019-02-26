@@ -9,7 +9,6 @@ interface ILoginProps {
 
 interface ILoginStates {
     userName:string,
-    password:string
 }
 
 function getHomeStyle() {
@@ -21,11 +20,9 @@ function getHomeStyle() {
 export class Login extends React.Component<ILoginProps, ILoginStates> {
     constructor(props: any) {
         super(props)
-        this.state = {userName:'',password:''};
+        this.state = {userName:''}
         this.onSubmitClick = this.onSubmitClick.bind(this);
         this.handleNameChange = this.handleNameChange.bind(this);
-        this.handlePasswordChange = this.handlePasswordChange.bind(this);
-        this.renderRedirect = this.renderRedirect.bind(this);
     }
 
     renderRedirect(){
@@ -43,12 +40,6 @@ export class Login extends React.Component<ILoginProps, ILoginStates> {
     handleNameChange(e:any){
         this.setState({
             userName: e.target.value
-        });
-    }
-
-    handlePasswordChange(e:any){
-        this.setState({
-            password:e.target.value
         });
     }
 

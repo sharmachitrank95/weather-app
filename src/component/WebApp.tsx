@@ -11,6 +11,7 @@ interface IWebAppStates{
     weatherData:any,
     isBusy:boolean
 }
+
 interface IWebAppProps{
     store:any
 }
@@ -21,7 +22,6 @@ export class WebApp extends React.Component<IWebAppProps, IWebAppStates>{
         super(props);
         this.state = {xCoordinate:30.734301,yCoordinate:76.793297,weatherData:null,isBusy:false};
         this.setCurrentLocation = this.setCurrentLocation.bind(this);
-        this.renderRedirect = this.renderRedirect.bind(this);
     }
 
     setCurrentLocation(){
@@ -69,6 +69,7 @@ export class WebApp extends React.Component<IWebAppProps, IWebAppStates>{
             })
         })
     }
+    
     renderRedirect(){
         if (!localStorage.getItem('userName') || localStorage.getItem('userName')!.length == 0) {
           return <Redirect to='/login' />
